@@ -17,7 +17,7 @@ jobs:
           CIBW_BUILD_VERBOSITY: 3
           CIBW_SKIP: ""
           CIBW_BEFORE_BUILD: "pip install scikit-build"
-          CIBW_REPAIR_WHEEL_COMMAND_MACOS: "delocate-wheel -w {dest_dir} -v {wheel}"
+          CIBW_REPAIR_WHEEL_COMMAND_MACOS: "echo 'Skipping delocate for pure Python wheel: {wheel}'"
     steps:
       - uses: actions/checkout@v4
 
