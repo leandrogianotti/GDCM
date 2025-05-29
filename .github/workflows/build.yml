@@ -31,7 +31,7 @@ jobs:
 
       - name: Build wheels
         run: |
-          python -m cibuildwheel --output-dir wheelhouse
+          python -m cibuildwheel --output-dir wheelhouse --archs x86_64
 
       - name: Source dist
         run: |
