@@ -1,3 +1,15 @@
 [build-system]
 requires = ["scikit-build-core", "cmake", "ninja", "setuptools", "wheel"]
 build-backend = "scikit_build_core.build"
+
+[project]
+name = "nombre-del-paquete"
+version = "0.1.0"
+description = "Descripción del paquete"
+authors = [
+  { name = "Tu Nombre", email = "tu@email.com" }
+]
+license = { text = "MIT" }
+readme = "README.md"
+requires-python = ">=3.7"
+dependencies = []
