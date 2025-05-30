@@ -16,7 +16,7 @@ setup(
         "": ["*"]
     },
     py_modules=['cmake'],
-    long_description=open('README.txt').read(),
+    long_description=open('README.Copyright.txt').read(),
     cmake_args=['-DGDCM_WRAP_PYTHON:BOOL=OFF',
                 '-DGDCM_DOCUMENTATION_SKIP_MANPAGES:BOOL=TRUE',
                 '-DGDCM_DOCUMENTATION:BOOL=FALSE',
