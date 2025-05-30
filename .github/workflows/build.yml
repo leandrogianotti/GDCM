@@ -15,6 +15,7 @@ jobs:
         os: [macos-latest]
     env:
           CIBW_BUILD_VERBOSITY: 3
+          CIBW_BUILD: "cp311-macosx_x86_64"
           CIBW_SKIP: ""
           CIBW_BEFORE_BUILD: "pip install scikit-build"
           CIBW_REPAIR_WHEEL_COMMAND_MACOS: "cp {wheel} {dest_dir}"
