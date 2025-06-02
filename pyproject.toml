@@ -3,11 +3,11 @@ requires = ["scikit-build-core", "cmake", "ninja", "setuptools", "wheel"]
 build-backend = "scikit_build_core.build"
 
 [project]
-name = "nombre-del-paquete"
-version = "0.1.0"
-description = "Descripción del paquete"
+name = "gdcm_tools"
+version = "3.0.25"
+description = "ProVoyance Shoulder GDCM tools x86_64"
 authors = [
-  { name = "Tu Nombre", email = "tu@email.com" }
+  { name = "Leandro Gianotti", email = "leandro.gianotti@intive.com" }
 ]
 license = { text = "MIT" }
 readme = "README.md"
