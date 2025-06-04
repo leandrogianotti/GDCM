@@ -1,6 +1,6 @@
 [build-system]
-requires = ["scikit-build-core", "cmake", "ninja", "setuptools", "wheel"]
-build-backend = "scikit_build_core.build"
+requires = ["scikit-build", "cmake", "ninja", "setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
 
 [project]
 name = "gdcm_tools"
