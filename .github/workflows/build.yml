@@ -1,0 +1,48 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - "*_build"
+
+
+jobs:
+  build_wheels:
+    name: Build wheels on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [macos-latest]
+    env:
+          CIBW_BUILD_VERBOSITY: 3
+          CIBW_BUILD: "cp311-macosx_x86_64"
+          CIBW_SKIP: ""
+          CIBW_BEFORE_BUILD: "pip install scikit-build"
+          CIBW_REPAIR_WHEEL_COMMAND_MACOS: "cp {wheel} {dest_dir}"
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        name: Install Python
+        with:
+          python-version: '3.11'
+
+      - name: Install cibuildwheel
+        run: |
+          python3 -m pip install cibuildwheel==2.23.3 scikit-build
+      - name: Build wheels
+        run: |
+          python -m cibuildwheel --output-dir wheelhouse --archs x86_64
+      - name: Source dist
+        run: |
+          python setup.py sdist
+      - uses: actions/upload-artifact@v4
+        with:
+          name: wheels_${{ matrix.os }}
+          path: ./wheelhouse
+          if-no-files-found: error
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dist_${{ matrix.os }}
+          path: ./dist
